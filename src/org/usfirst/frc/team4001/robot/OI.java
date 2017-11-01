@@ -1,7 +1,11 @@
 package org.usfirst.frc.team4001.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import org.usfirst.frc.team4001.robot.commands.Climb;
 import org.usfirst.frc.team4001.robot.commands.ExampleCommand;
 
 /**
@@ -16,6 +20,25 @@ public class OI {
 	// number it is.
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
+	
+	public Joystick gamepad1;
+	Button climbButton;
+	
+	public OI(){
+		gamepad1 = new Joystick(0);
+		climbButton = new JoystickButton(gamepad1, 4);
+		climbButton.whileHeld(new Climb());
+	}
+	public double getLeftAxis()
+	{
+		return gamepad1.getRawAxis(0);
+	}
+	
+	public double getRightAxis()
+	{
+		return gamepad1.getRawAxis(5);
+	}
+	
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
