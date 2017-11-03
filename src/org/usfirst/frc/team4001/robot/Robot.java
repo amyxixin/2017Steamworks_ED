@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team4001.robot.commands.*;
 import org.usfirst.frc.team4001.robot.subsystems.Climber;
+import org.usfirst.frc.team4001.robot.subsystems.Curtain;
 import org.usfirst.frc.team4001.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4001.robot.subsystems.ExampleSubsystem;
 
@@ -26,7 +27,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static final Climber climber = new Climber();
 	public static DriveTrain drivetrain;
-	
+	public static Curtain curtain = new Curtain();
 	
 
 	Command autonomousCommand;
